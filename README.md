@@ -1,6 +1,6 @@
 # ras_py_SmartPlugControl
 SmartPlug Control by python on the raspberry pie  
-
+---
 TP-LINK社製スマートプラグ HS105 (https://www.tp-link.com/jp/home-networking/smart-plug/hs105/) をコントロールするための Python スクリプト。  
 「TP-Link スマートコンセント HS105を試してみた（https://lmjs7.net/blog/tag/hs105/）」を参考にカスタマイズ
 
@@ -20,7 +20,7 @@ APIから端末を制御するには登録した端末のIPが必要。
 
 #### LAN内で使われているIPアドレスを調べる方法  
 1.スマホアプリで調べる(ios, android)  
- Fingを使う
+* Fingを使う
 
 2.ping + arpで調べる(Linux)  
 ```
@@ -52,7 +52,7 @@ python tplink_smartplug.py -t 192.168.0.2 -c off
 * IPには端末のIPを指定する。  
 
 #### Python3用に書き換え  
-「TP-Link スマートコンセントHS-105をAPIから操作（３）」を参照
+* 「TP-Link スマートコンセントHS-105をAPIから操作（３）」を参照
 
 #### モジュールからの呼び出し
 ```

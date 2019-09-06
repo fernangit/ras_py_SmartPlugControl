@@ -1,13 +1,13 @@
 # ras_py_SmartPlugControl
 SmartPlug Control by python on the raspberry pie  
 ---
-TP-LINK社製スマートプラグ HS105 (https://www.tp-link.com/jp/home-networking/smart-plug/hs105/) をコントロールするための Python スクリプト。  
-「TP-Link スマートコンセント HS105を試してみた（https://lmjs7.net/blog/tag/hs105/）」を参考にカスタマイズ
+TP-LINK社製スマートプラグ HS105(https://www.tp-link.com/jp/home-networking/smart-plug/hs105/)をコントロールするための Python スクリプト。  
+「TP-Link スマートコンセント HS105を試してみた(https://lmjs7.net/blog/tag/hs105/)」を参考にカスタマイズ
 
 ## HOW TO USE
 ### アカウントの作成  
-アカウントを作成してスマホアプリからコントロールできるようにする。  
-https://www.braveryk7.com/start-kasa/ を参照  
+アカウントを作成してスマホアプリから端末をコントロールできるようにする。  
+「TP-Link社製品のKasa初期設定手順まとめ 接続から設定までこれで解決！(https://www.braveryk7.com/start-kasa/)」を参照。  
   
 Step.1 専用アプリのインストール  
 Step.2 アカウント作成・ログイン  
@@ -27,18 +27,18 @@ APIから端末を制御するには登録した端末のIPが必要。
 for a in `seq 1 254`; do ping -c 1 -w 0.5 対象セグメント(第３オクテットまで).$a > /dev/null && arp -a 対象セグメント(第３オクテットまで).$a | grep ether; done
 ```
 * 対象セグメント(第３オクテットまで)→「192.168.0」など  
+
 3.ping + arpで調べる(Windows)  
 ```
-
 for /l %i in (0,1,255) do ping -w 1 -n 1 対象セグメント(第３オクテットまで).%i && arp -a 192.168.0.%i
 ```
 
 ### API  
 
 #### PythonベースのAPIを取得  
-Reverse Engineering the TP-Link HS110（https://www.softscheck.com/en/reverse-engineering-tp-link-hs110/）を参照  
-https://github.com/softScheck/tplink-smartplug からスクリプトを取得  
-tplink_smartplug.py(python2用)  
+「Reverse Engineering the TP-Link HS110(https://www.softscheck.com/en/reverse-engineering-tp-link-hs110/)」を参照。  
+https://github.com/softScheck/tplink-smartplug からスクリプトを取得。  
+* tplink_smartplug.py(python2用)  
 
 #### スクリプト実行 
 以下のコマンドで電源ON  
@@ -74,4 +74,3 @@ plug.control('192.168.0.2', 'on')
 
 ## License
 Apache License 2.0. See [LICENSE](/LICENSE).
-

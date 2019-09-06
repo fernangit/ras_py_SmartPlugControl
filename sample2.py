@@ -17,13 +17,13 @@ def PowerOffEntryValue(event):
 #ボタン設定
 Button1 = tkinter.Button(text=u'Power ON', width=10)
 Button1.bind("<Button-1>",PowerOnEntryValue) 
-#左クリック（<Button-1>）されると，DeleteEntryValue関数を呼び出すようにバインド
+#左クリック（<Button-1>）されると，PowerOnEntryValue関数を呼び出すようにバインド
 Button1.place(x=50, y=60)
 #Button1.pack()
 
 Button2 = tkinter.Button(text=u'Power OFF', width=10)
 Button2.bind("<Button-1>",PowerOffEntryValue) 
-#左クリック（<Button-1>）されると，DeleteEntryValue関数を呼び出すようにバインド
+#左クリック（<Button-1>）されると，PowerOffEntryValue関数を呼び出すようにバインド
 Button2.place(x=50, y=120)
 #Button2.pack()
 
